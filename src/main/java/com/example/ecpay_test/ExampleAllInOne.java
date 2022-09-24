@@ -1,6 +1,7 @@
 package com.example.ecpay_test;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Date;
 import java.util.Hashtable;
 import java.util.UUID;
 
@@ -30,20 +31,20 @@ public class ExampleAllInOne {
 		System.out.println("compare CheckMacValue method testing result: " + cmprChkMacValue());
 		System.out.println("apple pay create order: " + postCreateServerOrder());
 		System.out.println("doAction: " + postDoAction());
-		System.out.println("queryTradeInfo: " + postQueryTradeInfo());
-		System.out.println("queryCreditCardPeriodInfo: " + postQueryCreditCardPeriodInfo());
-		System.out.println("queryTrade: " + postQueryTrade());
-		System.out.println("tradeNoAio: " + postTradeNoAio());
-		System.out.println("fundingReconDetail: " + postFundingReconDetail());
-		System.out.println("aioCheckOutALL: " + genAioCheckOutALL());
-        System.out.println("aioCheckOutOneTime: " + genAioCheckOutApplePay());
-		System.out.println("aioCheckOutATM: " + genAioCheckOutATM());
-		System.out.println("aioCheckOutCVS: " + genAioCheckOutCVS());
-		System.out.println("aioCheckOutBARCODE: " + genAioCheckOutBARCODE());
-		System.out.println("aioCheckOutDevide: " + genAioCheckOutDevide());
-		System.out.println("aioCheckOutOneTime: " + genAioCheckOutOneTime());
-		System.out.println("aioCheckOutPeriod: " + genAioCheckOutPeriod());
-		System.out.println("aioCheckOutWebATM: " + genAioCheckOutWebATM());
+//		System.out.println("queryTradeInfo: " + postQueryTradeInfo());
+//		System.out.println("queryCreditCardPeriodInfo: " + postQueryCreditCardPeriodInfo());
+//		System.out.println("queryTrade: " + postQueryTrade());
+//		System.out.println("tradeNoAio: " + postTradeNoAio());
+//		System.out.println("fundingReconDetail: " + postFundingReconDetail());
+//		System.out.println("aioCheckOutALL: " + genAioCheckOutALL());
+//        System.out.println("aioCheckOutOneTime: " + genAioCheckOutApplePay());
+//		System.out.println("aioCheckOutATM: " + genAioCheckOutATM());
+//		System.out.println("aioCheckOutCVS: " + genAioCheckOutCVS());
+//		System.out.println("aioCheckOutBARCODE: " + genAioCheckOutBARCODE());
+//		System.out.println("aioCheckOutDevide: " + genAioCheckOutDevide());
+//		System.out.println("aioCheckOutOneTime: " + genAioCheckOutOneTime());
+//		System.out.println("aioCheckOutPeriod: " + genAioCheckOutPeriod());
+//		System.out.println("aioCheckOutWebATM: " + genAioCheckOutWebATM());
     }
     private static void initial(){
         all = new AllInOne("");
@@ -58,13 +59,18 @@ public class ExampleAllInOne {
 
     public static String postCreateServerOrder(){
         CreateServerOrderObj obj = new CreateServerOrderObj();
-        obj.setMerchantTradeNo("sdfkjh2kli3hlih");
-        obj.setMerchantTradeDate("2017/05/12 10:23:46");
+
+        long l = System.currentTimeMillis();
+        System.out.println("sssdshskc => " + String.valueOf(l).length());
+        obj.setMerchantTradeNo(l + "");
+//        obj.setMerchantTradeNo("sdfkjh2kli3hlihabcde");
+//        obj.setMerchantTradeNo("ROK012209180087");
+        obj.setMerchantTradeDate("2022/09/18 18:00:00");
         obj.setTotalAmount("1000");
         obj.setCurrencyCode("TWD");
         try {
-            obj.setItemName(new String("哈".getBytes("BIG5"), "UTF-8"));
-            obj.setTradeDesc(new String("哈".getBytes("BIG5"), "UTF-8"));
+            obj.setItemName(new String("ha".getBytes("BIG5"), "UTF-8"));
+            obj.setTradeDesc(new String("ha".getBytes("BIG5"), "UTF-8"));
         } catch (UnsupportedEncodingException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -137,12 +143,12 @@ public class ExampleAllInOne {
     public static String genAioCheckOutALL(){
         AioCheckOutALL obj = new AioCheckOutALL();
         obj.setMerchantTradeNo("testCompany0004");
-        obj.setMerchantTradeDate("2017/01/01 08:05:23");
+        obj.setMerchantTradeDate("2022/09/18 18:00:00");
         obj.setTotalAmount("50");
         obj.setTradeDesc("test Description");
         obj.setItemName("TestItem");
         obj.setReturnURL("http://211.23.128.214:5000");
-        obj.setNeedExtraPaidInfo("N");
+        obj.setNeedExtraPaidInfo("Y");
         String form = all.aioCheckOut(obj, null);
         return form;
     }

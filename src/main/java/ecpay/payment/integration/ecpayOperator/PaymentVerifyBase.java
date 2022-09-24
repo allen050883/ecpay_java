@@ -13,6 +13,7 @@ import ecpay.payment.integration.errorMsg.ErrorMessage;
 import ecpay.payment.integration.exception.EcpayException;
 
 public class PaymentVerifyBase {
+//    protected String confPath = "/Users/allen/Desktop/ecpay_test/src/main/java/ecpay/payment/integration/config/EcpayPayment.xml";
     protected String confPath = "/ecpay/payment/integration/config/EcpayPayment.xml";
     protected Document doc;
 

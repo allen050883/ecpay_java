@@ -44,9 +44,9 @@
         <pattern>^.{0,200}$</pattern>
       </param>
       <param  type="Opt"  require="1" name="ChoosePayment"> 
-        <option>ALL</option>
+<!--        <option>ALL</option>-->
         <option>Credit</option>
-        <option>ApplePay</option>
+<!--        <option>ApplePay</option>-->
         <condparam owner="Credit">
         <!--Reqirement checking of following credit card related sub parameter would be handled in 
         client.rb due to different credit payment type -->

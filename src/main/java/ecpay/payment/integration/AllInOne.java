@@ -123,13 +123,16 @@ public class AllInOne extends AllInOneBase{
 		try{
 			obj.setPaymentToken(EcpayFunction.AESEncode(HashKey, HashIV, obj.getPaymentToken()));
 			VerifyCreateServerOrder verify = new VerifyCreateServerOrder();
+			System.out.println("operatingModeA => " + operatingMode);
 			createServerOrderUrl = verify.getAPIUrl(operatingMode);
+			System.out.println("operatingModeA => createServerOrderUrl => " + createServerOrderUrl);
 			verify.verifyParams(obj);
 			CheckMacValue = EcpayFunction.genCheckMacValue(HashKey, HashIV, obj);
 			log.info("createServerOrder generate CheckMacValue: " + CheckMacValue);
 			String httpValue = EcpayFunction.genHttpValue(obj, CheckMacValue);
 			log.info("createServerOrder post String: " + httpValue);
 			result = EcpayFunction.httpPost(createServerOrderUrl, httpValue, "UTF-8");
+			log.info("createServerOrder post String: " + httpValue);
 		} catch(EcpayException e){
 			e.ShowExceptionMessage();
 			log.error(e.getNewExceptionMessage());
@@ -138,6 +141,7 @@ public class AllInOne extends AllInOneBase{
 			log.error(e.getMessage());
 			throw new EcpayException(e.getMessage());
 		}
+		System.out.println("Create Order => " + result);
 		return result;
 	}
 	
@@ -295,6 +299,7 @@ public class AllInOne extends AllInOneBase{
 			String httpValue = EcpayFunction.genHttpValue(doActionObj, CheckMacValue);
 			log.info("doAction post String: " + httpValue);
 			result = EcpayFunction.httpPost(doActionUrl, httpValue, "UTF-8");
+			System.out.println("Do Action" + result);
 		} catch (EcpayException e2){
 			e2.ShowExceptionMessage();
 			log.error(e2.getNewExceptionMessage());
