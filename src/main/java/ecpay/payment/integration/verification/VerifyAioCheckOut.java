@@ -54,6 +54,7 @@ public class VerifyAioCheckOut extends PaymentVerifyBase {
 				try{
 					method = cls.getMethod("get"+tmpEle.getAttribute("name"), null);
 					objValue = method.invoke(obj, null).toString();
+					System.out.println("index i => " + i+ " , "+ method.getName()+ " , "+objValue);
 				} catch(Exception e){
 					throw new EcpayException(ErrorMessage.OBJ_MISSING_FIELD);
 				}

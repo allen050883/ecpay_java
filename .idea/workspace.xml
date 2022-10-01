@@ -5,64 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56170437-f315-4841-a776-78038267a77b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecpay_test/ExampleAllInOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ecpay_test/ExampleAllInOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ecpay/payment/integration/AllInOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecpay/payment/integration/AllInOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ecpay/payment/integration/config/EcpayPayment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecpay/payment/integration/config/EcpayPayment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ecpay/payment/integration/ecpayOperator/PaymentVerifyBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecpay/payment/integration/ecpayOperator/PaymentVerifyBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ecpay/payment/integration/verification/VerifyCreateServerOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecpay/payment/integration/verification/VerifyCreateServerOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/payment_conf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/payment_conf.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ecpay_test/EcpayTestApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ecpay_test/ExampleAllInOne.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/AllInOne.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/AllInOneBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/config/EcpayConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/config/EcpayPayment.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/ATMRequestObj.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/AioCheckOutALL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/AioCheckOutATM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/AioCheckOutApplePay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/AioCheckOutBARCODE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/AioCheckOutCVS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/AioCheckOutDevide.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/AioCheckOutGooglePay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/AioCheckOutOneTime.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/AioCheckOutPeriod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/AioCheckOutWebATM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/CVSOrBARCODERequestObj.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/CaptureObj.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/CreateServerOrderObj.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/DoActionObj.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/FundingReconDetailObj.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/InvoiceObj.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/QueryCreditCardPeriodInfoObj.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/QueryTradeInfoObj.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/QueryTradeObj.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/domain/TradeNoAioObj.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/ecpayOperator/EcpayFunction$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/ecpayOperator/EcpayFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/ecpayOperator/PaymentVerifyBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/errorMsg/ErrorMessage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/exception/EcpayException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/verification/VerifyAioCheckOut.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/verification/VerifyCapture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/verification/VerifyCreateServerOrder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/verification/VerifyDoAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/verification/VerifyFundingReconDetail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/verification/VerifyQueryCreditTrade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/verification/VerifyQueryTrade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/verification/VerifyQueryTradeInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/verification/VerifyTradeNoAio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lib/javax.servlet-3.0.0.v201112011016.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lib/log4j-api-2.17.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lib/log4j-core-2.17.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/payment_conf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ecpay/payment/integration/verification/VerifyAioCheckOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ecpay/payment/integration/verification/VerifyAioCheckOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/ecpay_test/ExampleAllInOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/ecpay_test/ExampleAllInOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/ecpayOperator/PaymentVerifyBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/ecpayOperator/PaymentVerifyBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/verification/VerifyAioCheckOut.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ecpay/payment/integration/verification/VerifyAioCheckOut.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,6 +46,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -145,11 +108,22 @@
       <option name="presentableId" value="Default" />
       <updated>1662287294733</updated>
       <workItem from="1662287300547" duration="389000" />
-      <workItem from="1663483809510" duration="20474000" />
+      <workItem from="1663483809510" duration="31964000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
 </project>

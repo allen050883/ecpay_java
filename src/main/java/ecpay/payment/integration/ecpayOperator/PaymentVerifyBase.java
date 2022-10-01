@@ -2,6 +2,7 @@ package ecpay.payment.integration.ecpayOperator;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,6 +33,8 @@ public class PaymentVerifyBase {
         if (objValue.isEmpty()) {
             return;
         }
+        System.out.println("valueCheck type => "+type + " , objValue => " +objValue + " , element => " +ele.getAttribute("name"));
+
         if (type.equals("String")) {
             if (ele.getElementsByTagName("pattern") != null) {
                 Pattern r = Pattern.compile(ele.getElementsByTagName("pattern").item(0).getTextContent().toString());
@@ -45,6 +48,7 @@ public class PaymentVerifyBase {
             for (int i = 0; i < n.getLength(); i++) {
                 opt.add(n.item(i).getTextContent().toString());
             }
+            System.out.println("Array => " + Arrays.toString(opt.toArray()));
             if (!opt.contains(objValue))
                 throw new EcpayException(ele.getAttribute("name") + ErrorMessage.COLUMN_RULE_ERROR);
         } else if (type.equals("Int")) {

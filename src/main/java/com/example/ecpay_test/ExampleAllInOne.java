@@ -26,17 +26,18 @@ import ecpay.payment.integration.domain.TradeNoAioObj;
 
 public class ExampleAllInOne {
     public static AllInOne all;
+
     public static void main(String[] args) {
         initial();
-		System.out.println("compare CheckMacValue method testing result: " + cmprChkMacValue());
-		System.out.println("apple pay create order: " + postCreateServerOrder());
-		System.out.println("doAction: " + postDoAction());
-//		System.out.println("queryTradeInfo: " + postQueryTradeInfo());
-//		System.out.println("queryCreditCardPeriodInfo: " + postQueryCreditCardPeriodInfo());
-//		System.out.println("queryTrade: " + postQueryTrade());
-//		System.out.println("tradeNoAio: " + postTradeNoAio());
-//		System.out.println("fundingReconDetail: " + postFundingReconDetail());
-//		System.out.println("aioCheckOutALL: " + genAioCheckOutALL());
+        System.out.println("compare CheckMacValue method testing result: " + cmprChkMacValue());
+        System.out.println("apple pay create order: " + postCreateServerOrder());
+        System.out.println("doAction: " + postDoAction());
+		System.out.println("queryTradeInfo: " + postQueryTradeInfo());
+		System.out.println("queryCreditCardPeriodInfo: " + postQueryCreditCardPeriodInfo());
+		System.out.println("queryTrade: " + postQueryTrade());
+		System.out.println("tradeNoAio: " + postTradeNoAio());
+		System.out.println("fundingReconDetail: " + postFundingReconDetail());
+		System.out.println("aioCheckOutALL: " + genAioCheckOutALL());
 //        System.out.println("aioCheckOutOneTime: " + genAioCheckOutApplePay());
 //		System.out.println("aioCheckOutATM: " + genAioCheckOutATM());
 //		System.out.println("aioCheckOutCVS: " + genAioCheckOutCVS());
@@ -46,25 +47,21 @@ public class ExampleAllInOne {
 //		System.out.println("aioCheckOutPeriod: " + genAioCheckOutPeriod());
 //		System.out.println("aioCheckOutWebATM: " + genAioCheckOutWebATM());
     }
-    private static void initial(){
+
+    private static void initial() {
         all = new AllInOne("");
     }
 
-    public static boolean cmprChkMacValue(){
+    public static boolean cmprChkMacValue() {
         Hashtable<String, String> dict = new Hashtable<String, String>();
         dict.put("MerchantID", "2000132");
         dict.put("CheckMacValue", "50BE3989953C1734E32DD18EB23698241E035F9CBCAC74371CCCF09E0E15BD61");
         return all.compareCheckMacValue(dict);
     }
 
-    public static String postCreateServerOrder(){
+    public static String postCreateServerOrder() {
         CreateServerOrderObj obj = new CreateServerOrderObj();
-
-        long l = System.currentTimeMillis();
-        System.out.println("sssdshskc => " + String.valueOf(l).length());
-        obj.setMerchantTradeNo(l + "");
-//        obj.setMerchantTradeNo("sdfkjh2kli3hlihabcde");
-//        obj.setMerchantTradeNo("ROK012209180087");
+        obj.setMerchantTradeNo(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 20));
         obj.setMerchantTradeDate("2022/09/18 18:00:00");
         obj.setTotalAmount("1000");
         obj.setCurrencyCode("TWD");
@@ -81,16 +78,16 @@ public class ExampleAllInOne {
         return all.createServerOrder(obj);
     }
 
-    public static String postDoAction(){
+    public static String postDoAction() {
         DoActionObj obj = new DoActionObj();
-        obj.setMerchantTradeNo("b0fac40057364c0894b");
+        obj.setMerchantTradeNo(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 20));
         obj.setTotalAmount("100");
         obj.setTradeNo("16054565489");
         obj.setAction("C");
         return all.doAction(obj);
     }
 
-    public static String postFundingReconDetail(){
+    public static String postFundingReconDetail() {
         FundingReconDetailObj obj = new FundingReconDetailObj();
         obj.setPayDateType("close");
         obj.setStartDate("2017-03-03");
@@ -98,7 +95,7 @@ public class ExampleAllInOne {
         return all.fundingReconDetail(obj);
     }
 
-    public static String postQueryTrade(){
+    public static String postQueryTrade() {
         QueryTradeObj obj = new QueryTradeObj();
         obj.setCreditRefundId("10123456");
         obj.setCreditAmount("100");
@@ -106,13 +103,13 @@ public class ExampleAllInOne {
         return all.queryTrade(obj);
     }
 
-    public static String postQueryTradeInfo(){
+    public static String postQueryTradeInfo() {
         QueryTradeInfoObj obj = new QueryTradeInfoObj();
-        obj.setMerchantTradeNo("0c3075e7499743e58ef");
+        obj.setMerchantTradeNo(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 20));
         return all.queryTradeInfo(obj);
     }
 
-    public static String postTradeNoAio(){
+    public static String postTradeNoAio() {
         TradeNoAioObj obj = new TradeNoAioObj();
         obj.setDateType("6");
         obj.setBeginDate("2017-03-03");
@@ -121,87 +118,90 @@ public class ExampleAllInOne {
         return all.tradeNoAio(obj);
     }
 
-    public static String postQueryCreditCardPeriodInfo(){
+    public static String postQueryCreditCardPeriodInfo() {
         QueryCreditCardPeriodInfoObj obj = new QueryCreditCardPeriodInfoObj();
-        obj.setMerchantTradeNo("74823H75879R166472");
+        obj.setMerchantTradeNo(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 20));
         return all.queryCreditCardPeriodInfo(obj);
     }
 
-    public static String genAioCheckOutWebATM(){
+    public static String genAioCheckOutWebATM() {
         AioCheckOutWebATM obj = new AioCheckOutWebATM();
-        obj.setMerchantTradeNo("testCompany000444");
+        obj.setMerchantTradeNo(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 20));
         obj.setMerchantTradeDate("2017/01/01 08:05:08");
         obj.setTotalAmount("100");
         obj.setTradeDesc("test Description");
         obj.setItemName("Test Item");
-        obj.setReturnURL("http://211.23.128.214:5000");
+        obj.setReturnURL("https://www.google.com.tw/");
         obj.setNeedExtraPaidInfo("N");
         String form = all.aioCheckOut(obj, null);
         return form;
     }
 
-    public static String genAioCheckOutALL(){
+    public static String genAioCheckOutALL() {
         AioCheckOutALL obj = new AioCheckOutALL();
-        obj.setMerchantTradeNo("testCompany0004");
+        obj.setMerchantTradeNo(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 20));
         obj.setMerchantTradeDate("2022/09/18 18:00:00");
         obj.setTotalAmount("50");
         obj.setTradeDesc("test Description");
         obj.setItemName("TestItem");
-        obj.setReturnURL("http://211.23.128.214:5000");
+        obj.setReturnURL("https://www.google.com");
+//        obj.setOrderResultURL("https://www.google.com.tw/");
         obj.setNeedExtraPaidInfo("Y");
         String form = all.aioCheckOut(obj, null);
         return form;
     }
-    public static String genAioCheckOutApplePay(){
+
+    public static String genAioCheckOutApplePay() {
         AioCheckOutApplePay obj = new AioCheckOutApplePay();
-        obj.setMerchantTradeNo("testapplepay052302");
+        obj.setMerchantTradeNo(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 20));
         obj.setMerchantTradeDate("2017/01/01 08:05:23");
         obj.setTotalAmount("50");
         obj.setTradeDesc("test Description");
         obj.setItemName("TestItem");
-        obj.setReturnURL("http://211.23.128.214:5000");
+        obj.setReturnURL("https://www.google.com.tw/");
         obj.setNeedExtraPaidInfo("N");
         String form = all.aioCheckOut(obj, null);
         return form;
     }
-    public static String genAioCheckOutATM(){
+
+    public static String genAioCheckOutATM() {
         AioCheckOutATM obj = new AioCheckOutATM();
-        obj.setMerchantTradeNo("testCompany0005");
+        obj.setMerchantTradeNo(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 20));
         obj.setMerchantTradeDate("2017/01/01 08:05:23");
         obj.setTotalAmount("50");
         obj.setTradeDesc("test Description");
         obj.setItemName("TestItem");
-        obj.setReturnURL("http://211.23.128.214:5000");
+        obj.setReturnURL("https://www.google.com.tw/");
         obj.setNeedExtraPaidInfo("N");
         obj.setExpireDate("6");
         String form = all.aioCheckOut(obj, null);
         return form;
     }
 
-    public static String genAioCheckOutBARCODE(){
+    public static String genAioCheckOutBARCODE() {
         AioCheckOutBARCODE obj = new AioCheckOutBARCODE();
-        obj.setMerchantTradeNo("testCompany0007");
+        obj.setMerchantTradeNo(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 20));
         obj.setMerchantTradeDate("2017/01/01 08:05:23");
         obj.setTotalAmount("50");
         obj.setTradeDesc("test Description");
         obj.setItemName("TestItem");
-        obj.setReturnURL("http://211.23.128.214:5000");
+        obj.setReturnURL("https://www.google.com.tw/");
         obj.setNeedExtraPaidInfo("N");
         obj.setStoreExpireDate("3");
         String form = all.aioCheckOut(obj, null);
         return form;
     }
 
-    public static String genAioCheckOutCVS(){
+    public static String genAioCheckOutCVS() {
         AioCheckOutCVS obj = new AioCheckOutCVS();
         InvoiceObj invoice = new InvoiceObj();
         UUID uid = UUID.randomUUID();
-        obj.setMerchantTradeNo(uid.toString().replaceAll("-", "").substring(0, 20));
+        obj.setMerchantTradeNo(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 20));
         obj.setMerchantTradeDate("2017/01/01 08:05:23");
         obj.setTotalAmount("50");
         obj.setTradeDesc("test Description");
         obj.setItemName("TestItem");
-        obj.setReturnURL("http://211.23.128.214:5000");
+        obj.setReturnURL("https://www.google.com.tw/");
         obj.setNeedExtraPaidInfo("N");
         obj.setStoreExpireDate("3");
         obj.setInvoiceMark("Y");
@@ -227,42 +227,42 @@ public class ExampleAllInOne {
         return form;
     }
 
-    public static String genAioCheckOutDevide(){
+    public static String genAioCheckOutDevide() {
         AioCheckOutDevide obj = new AioCheckOutDevide();
-        obj.setMerchantTradeNo("testorder2022052301");
+        obj.setMerchantTradeNo(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 20));
         obj.setMerchantTradeDate("2017/01/01 08:05:23");
         obj.setTotalAmount("20000");
         obj.setTradeDesc("test Description");
         obj.setItemName("TestItem");
-        obj.setReturnURL("http://211.23.128.214:5000");
+        obj.setReturnURL("https://www.google.com.tw/");
         obj.setNeedExtraPaidInfo("N");
         obj.setCreditInstallment("12");
         String form = all.aioCheckOut(obj, null);
         return form;
     }
 
-    public static String genAioCheckOutOneTime(){
+    public static String genAioCheckOutOneTime() {
         AioCheckOutOneTime obj = new AioCheckOutOneTime();
-        obj.setMerchantTradeNo("testCompany0008");
+        obj.setMerchantTradeNo(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 20));
         obj.setMerchantTradeDate("2017/01/01 08:05:23");
         obj.setTotalAmount("50");
         obj.setTradeDesc("test Description");
         obj.setItemName("TestItem");
-        obj.setReturnURL("http://211.23.128.214:5000");
+        obj.setReturnURL("https://www.google.com.tw/");
         obj.setNeedExtraPaidInfo("N");
         obj.setRedeem("Y");
         String form = all.aioCheckOut(obj, null);
         return form;
     }
 
-    public static String genAioCheckOutPeriod(){
+    public static String genAioCheckOutPeriod() {
         AioCheckOutPeriod obj = new AioCheckOutPeriod();
-        obj.setMerchantTradeNo("testCompany0009");
+        obj.setMerchantTradeNo(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 20));
         obj.setMerchantTradeDate("2017/01/01 08:05:23");
         obj.setTotalAmount("50");
         obj.setTradeDesc("test Description");
         obj.setItemName("TestItem");
-        obj.setReturnURL("http://211.23.128.214:5000");
+        obj.setReturnURL("https://www.google.com.tw/");
         obj.setNeedExtraPaidInfo("N");
         obj.setPeriodAmount("50");
         obj.setPeriodType("D");
